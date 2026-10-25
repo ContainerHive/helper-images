@@ -1,0 +1,22 @@
+description: "Nix with flakes and the nix command enabled, ready to use as a builder image."
+
+tag_ranges:
+  - tag_name: "{{.major}}.{{.minor}}"
+    source:
+      type: dockerhub
+      image: nixos/nix
+    select:
+      major: { last: 3 }
+      minor: { last: 15 }
+      patch: latest
+    filter:
+      exclude_suffixes: ["-arm64", "-amd64"]
+      min_version: "2.4.0" # flakes need Nix 2.4+
+    versions:
+      nix: "{{.full}}"
+
+latest_alias:
+  tag: latest
+
+report:
+  icon: "devicon-nixos-plain"

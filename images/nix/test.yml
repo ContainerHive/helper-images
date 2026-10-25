@@ -1,0 +1,11 @@
+schemaVersion: 2.0.0
+commandTests:
+  - name: "nix-installed"
+    command: "nix"
+    args: ["--version"]
+    exitCode: 0
+  - name: "flakes-enabled"
+    command: "nix"
+    args: ["config", "show", "experimental-features"]
+    expectedOutput: ["flakes"]
+    exitCode: 0
