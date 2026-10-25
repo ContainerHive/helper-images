@@ -1,0 +1,19 @@
+description: "Canonical Chisel, the tool that cuts minimal rootfs slices from Ubuntu packages."
+
+tag_ranges:
+  - tag_name: "{{.major}}.{{.minor}}"
+    source:
+      type: github
+      repo: canonical/chisel
+    select:
+      major: { last: 3 }
+      minor: { last: 10 }
+      patch: latest
+    versions:
+      chisel: "{{.full}}"
+
+latest_alias:
+  tag: latest
+
+report:
+  icon: "devicon-ubuntu-plain"
