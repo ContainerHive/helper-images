@@ -1,6 +1,6 @@
 # Chisel
 
-[Canonical Chisel](https://github.com/canonical/chisel) on Ubuntu 24.04, with `ca-certificates`, `curl` and `git`.
+[Canonical Chisel](https://github.com/canonical/chisel) on Ubuntu 24.04, with `ca-certificates` and `git`.
 Use it to cut slices from [chisel-releases](https://github.com/canonical/chisel-releases) in CI or in a multi-stage
 build.
 
