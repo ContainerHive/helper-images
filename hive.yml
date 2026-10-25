@@ -1,0 +1,18 @@
+registry:
+  address: 'ghcr.io/containerhive/helper-images'
+
+cache:
+  type: registry
+  ref: ghcr.io/containerhive/helper-images/cache
+
+platforms:
+  - linux/amd64
+  - linux/arm64
+
+cache_dir: .ch-cache
+version_cache_ttl: 6h
+
+labels:
+  vendor: ContainerHive
+  authors: Timo Reymann
+  url: https://github.com/ContainerHive/helper-images/tree/main/images/%image%
