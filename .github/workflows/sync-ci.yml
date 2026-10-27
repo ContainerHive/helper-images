@@ -21,6 +21,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v7.0.1
+        with:
+          # create-pull-request adds its own Authorization header; the credentials that
+          # checkout persists by default would arrive as a duplicate header (HTTP 400).
+          persist-credentials: false
       - name: Restore version cache
         uses: actions/cache@v4.2.0
         with:
