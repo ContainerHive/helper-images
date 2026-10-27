@@ -3,8 +3,8 @@ description: "Rootless Docker-in-Docker tuned for unprivileged CI pods: pasta ne
 tag_ranges:
   - tag_name: "{{.major}}.{{.minor}}"
     source:
-      type: github
-      repo: moby/moby
+      type: dockerhub
+      image: library/docker
     select:
       major: { last: 3 }
       minor: { last: 10 }
