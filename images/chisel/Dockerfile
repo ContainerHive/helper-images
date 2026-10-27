@@ -1,4 +1,4 @@
-FROM mirror.gcr.io/library/ubuntu:24.04
+FROM mirror.gcr.io/library/ubuntu:26.04
 ARG TARGETARCH
 ARG CHISEL_VERSION
 # hadolint ignore=DL3008

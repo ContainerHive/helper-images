@@ -15,5 +15,5 @@ docker run --rm ghcr.io/containerhive/helper-images/chisel:latest version
 
 ```dockerfile
 FROM ghcr.io/containerhive/helper-images/chisel:1.5 AS cut
-RUN chisel cut --release ubuntu-24.04 --root /rootfs base-files_base ca-certificates_data
+RUN chisel cut --release ubuntu-26.04 --root /rootfs base-files_base ca-certificates_data
 ```
