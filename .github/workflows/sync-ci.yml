@@ -41,8 +41,11 @@ jobs:
       - name: Open pull request
         uses: peter-evans/create-pull-request@v7.0.8
         with:
-          # Pushing workflow files needs a token with the `workflow` scope, GITHUB_TOKEN is not allowed to
-          token: ${{ secrets.CI_SYNC_TOKEN }}
+          # Pushing workflow files needs a token with the `workflow` scope. Falls back to
+          # GITHUB_TOKEN, which GitHub rejects for workflow-file changes ("refusing to allow
+          # a GitHub Actions token to create or update workflow without `workflow` scope"),
+          # so the run fails loudly instead of silently skipping the sync.
+          token: ${{ secrets.CI_SYNC_TOKEN || github.token }}
           branch: ci/sync-build-workflow
           commit-message: "ci: regenerate build workflow for current tag ranges"
           title: "ci: regenerate build workflow for current tag ranges"
