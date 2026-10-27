@@ -1,0 +1,23 @@
+schemaVersion: 2.0.0
+metadataTest:
+  user: rootless
+  entrypoint: ["dockerd-entrypoint.sh"]
+  envVars:
+    - key: DOCKERD_ROOTLESS_ROOTLESSKIT_NET
+      value: pasta
+    - key: DOCKERD_ROOTLESS_ROOTLESSKIT_FLAGS
+      value: --port-driver=implicit
+fileExistenceTests:
+  - name: "dockerd-entrypoint-script"
+    path: "/usr/local/bin/dockerd-entrypoint.sh"
+    shouldExist: true
+  - name: "pasta-installed"
+    path: "/usr/bin/pasta"
+    shouldExist: true
+fileContentTests:
+  - name: "subuid-range-fits-pod-mapping"
+    path: "/etc/subuid"
+    expectedContents: ["rootless:1001:64535"]
+  - name: "subgid-range-fits-pod-mapping"
+    path: "/etc/subgid"
+    expectedContents: ["rootless:1001:64535"]

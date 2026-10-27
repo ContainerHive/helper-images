@@ -1,0 +1,19 @@
+description: "Rootless Docker-in-Docker tuned for unprivileged CI pods: pasta networking and a subuid range that fits the pod user mapping."
+
+tag_ranges:
+  - tag_name: "{{.major}}.{{.minor}}"
+    source:
+      type: github
+      repo: moby/moby
+    select:
+      major: { last: 3 }
+      minor: { last: 10 }
+      patch: latest
+    versions:
+      docker: "{{.full}}"
+
+latest_alias:
+  tag: latest
+
+report:
+  icon: "devicon-docker-plain"
