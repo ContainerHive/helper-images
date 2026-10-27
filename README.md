@@ -5,7 +5,7 @@ published to `ghcr.io/containerhive/helper-images`.
 
 | Image                                                                 | Contents                                  | Tracked versions                                  |
 |:----------------------------------------------------------------------|:------------------------------------------|:--------------------------------------------------|
-| [`chisel`](images/chisel/README.md)                                   | [Canonical Chisel](https://github.com/canonical/chisel) on Ubuntu 24.04 | last 3 majors, 10 minors each, latest patch |
+| [`chisel`](images/chisel/README.md)                                   | [Canonical Chisel](https://github.com/canonical/chisel) on Ubuntu 26.04 | last 3 majors, 10 minors each, latest patch |
 | [`nix`](images/nix/README.md)                                         | [Nix](https://nixos.org) with flakes enabled | last 3 majors, 15 minors each, latest patch (Nix 2.4+) |
 
 Tags are resolved from the upstream releases by `tag_ranges` (see each `image.yml`), so new series show up without
