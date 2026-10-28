@@ -1,0 +1,10 @@
+schemaVersion: 2.0.0
+metadataTest:
+  entrypoint: ["dockerd-entrypoint.sh"]
+fileExistenceTests:
+  - name: "dockerd-entrypoint-script"
+    path: "/usr/local/bin/dockerd-entrypoint.sh"
+    shouldExist: true
+  - name: "dockerd-installed"
+    path: "/usr/local/bin/dockerd"
+    shouldExist: true

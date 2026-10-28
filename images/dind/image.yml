@@ -1,0 +1,19 @@
+description: "Privileged Docker-in-Docker for CI runners that allow a privileged service, such as GitHub-hosted runners."
+
+tag_ranges:
+  - tag_name: "{{.major}}.{{.minor}}"
+    source:
+      type: dockerhub
+      image: library/docker
+    select:
+      major: { last: 3 }
+      minor: { last: 10 }
+      patch: latest
+    versions:
+      docker: "{{.full}}"
+
+latest_alias:
+  tag: latest
+
+report:
+  icon: "devicon-docker-plain"

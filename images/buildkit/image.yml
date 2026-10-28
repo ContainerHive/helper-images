@@ -1,0 +1,21 @@
+description: "BuildKit daemon (buildkitd) for building images in CI."
+
+tag_ranges:
+  - tag_name: "v{{.major}}.{{.minor}}"
+    source:
+      type: dockerhub
+      image: moby/buildkit
+    select:
+      major: { last: 3 }
+      minor: { last: 10 }
+      patch: latest
+    filter:
+      exclude_suffixes: ["-rootless"]
+    versions:
+      buildkit: "{{.full}}"
+
+latest_alias:
+  tag: latest
+
+report:
+  icon: "devicon-docker-plain"
