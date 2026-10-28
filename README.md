@@ -7,7 +7,9 @@ published to `ghcr.io/containerhive/helper-images`.
 |:----------------------------------------------------------------------|:------------------------------------------|:--------------------------------------------------|
 | [`chisel`](images/chisel/README.md)                                   | [Canonical Chisel](https://github.com/canonical/chisel) on Ubuntu 26.04 | last 3 majors, 10 minors each, latest patch |
 | [`nix`](images/nix/README.md)                                         | [Nix](https://nixos.org) with flakes enabled | last 3 majors, 15 minors each, latest patch (Nix 2.4+) |
+| [`dind`](images/dind/README.md)                                       | [Docker-in-Docker](https://hub.docker.com/_/docker) for runners that allow a privileged service | last 3 majors, 10 minors each, latest patch |
 | [`dind-rootless`](images/dind-rootless/README.md)                     | Rootless [Docker-in-Docker](https://docs.docker.com/engine/security/rootless/) for unprivileged CI pods | last 3 majors, 10 minors each, latest patch |
+| [`buildkit`](images/buildkit/README.md)                               | [BuildKit](https://github.com/moby/buildkit) daemon for CI builds | last 3 majors, 10 minors each, latest patch |
 
 Tags are resolved from the upstream releases by `tag_ranges` (see each `image.yml`), so new series show up without
 editing the repository.

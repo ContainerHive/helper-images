@@ -1,0 +1,12 @@
+schemaVersion: 2.0.0
+metadataTest:
+  entrypoint: ["/usr/bin/buildkitd-entrypoint"]
+commandTests:
+  - name: "buildkitd-installed"
+    command: "buildkitd"
+    args: ["--version"]
+    exitCode: 0
+  - name: "buildctl-installed"
+    command: "buildctl"
+    args: ["--version"]
+    exitCode: 0
