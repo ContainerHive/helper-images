@@ -16,3 +16,8 @@ labels:
   vendor: ContainerHive
   authors: Timo Reymann
   url: https://github.com/ContainerHive/helper-images/tree/main/images/%image%
+
+# The pipeline builds and tests the buildkit and dind helper images, so it can not depend on them.
+template_options:
+  ci_buildkit_image: moby/buildkit
+  ci_dind_image: docker:dind
